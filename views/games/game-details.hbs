@@ -1,3 +1,30 @@
-<h2>Game details</h2>
 
-<p>Title:{{data.results.name}}</p>
+
+
+{{!-- {{#each data.}} --}}
+<h1>{{data.name}} TITULO</h1>
+<div>
+    <div>
+        <h4>Imagen</h4>
+        
+        <img src="{{data.url}}" alt="portada">
+
+    </div>
+    <div>
+        <h4>Nota del juego</h4>
+        <p>{{data.rating}}</p>
+
+    </div>
+    <div>
+        <h4>Descripcion</h4>
+        <p>{{data.description}}</p>
+
+    </div>
+    <div>
+        <h4>Release</h4>
+        <p>{{data.released}}</p>
+
+    </div>
+</div>
+
+{{!-- {{/each}} --}}

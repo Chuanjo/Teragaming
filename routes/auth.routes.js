@@ -19,7 +19,7 @@ router.get("/signup", isLoggedOut, (req, res) => {
 });
 
 router.post("/signup", isLoggedOut, (req, res) => {
-  const { username, password } = req.body;
+  const { username, email, password } = req.body;
 
   if (!username) {
     return res.status(400).render("auth/signup", {
@@ -62,13 +62,15 @@ router.post("/signup", isLoggedOut, (req, res) => {
         // Create a user and save it in the database
         return User.create({
           username,
+          email,
           password: hashedPassword,
         });
       })
       .then((user) => {
         // Bind the user to the session object
         req.session.user = user;
-        res.redirect("/");
+        req.app.locals.isLoggedIn = true
+        res.redirect("/auth/profile");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
@@ -128,8 +130,9 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           });
         }
         req.session.user = user;
+        req.app.locals.isLoggedIn = true // esta es una variable loca accesible en handlebars
         // req.session.user = user._id; 
-        return res.redirect("/profile");
+        return res.redirect("/auth/profile");
       });
     })
 
@@ -148,6 +151,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
         .status(500)
         .render("auth/logout", { errorMessage: err.message });
     }
+    req.app.locals.isLoggedIn = false
     res.redirect("/");
   });
 });
