@@ -29,6 +29,7 @@ h1 {
 }
 .menu ul li a{
   text-decoration: none;
+  color: black;
 }
 
 
@@ -41,14 +42,23 @@ h1 {
 }
 
 .despe-menu{
-  background-color: rgb(4, 1, 189);
+  background-color: rgb(221, 125, 14);
   font-size: 20px;
+}
+.despe-menu a{
+  color: black;
 }
 
 .menu2{
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px 0px 10px 0px;
+  text-align:right;
+  margin: 10px 50px;
+  font-size: 30px;
+}
+.menu2 a{
+  text-decoration: none;
+  background-color: rgb(221, 126, 17);
+  color: black;
+  border-radius: 5px;
 }
 
 .oneGame{
@@ -73,4 +83,10 @@ h1 {
 .anco-game a{
   text-decoration: none;
   color: black;
+}
+
+.menu-logo{
+  display: flex;
+  justify-content: center;
+  padding: 50px 50px;
 }
