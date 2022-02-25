@@ -15,7 +15,7 @@ router.get("/game-list", (req, res, next) => {
 });
 
 router.get("/game-details/:id", (req, res, next)=>{
-  axios.get(`https://api.rawg.io/api/games?key=${process.env.GAMES_API_KEY}`)
+  axios.get(`https://api.rawg.io/api/games/?key=${process.env.GAMES_API_KEY}`)
   .then((response)=>{
     res.render("games/game-details", {data:response.data.results})
   })
