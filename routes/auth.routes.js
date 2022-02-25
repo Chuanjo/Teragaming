@@ -129,7 +129,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
         }
         req.session.user = user;
         // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
-        return res.redirect("/");
+        return res.redirect("/profile");
       });
     })
 
@@ -153,7 +153,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
 });
 
 router.get("/profile", (req, res, next) => {
-  res.render("auth/profile");
+  res.render("auth/profile.hbs")
 });
 
 module.exports = router;
