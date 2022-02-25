@@ -50,3 +50,27 @@ h1 {
   justify-content: flex-end;
   padding: 10px 0px 10px 0px;
 }
+
+.oneGame{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  width: auto;
+  height: auto;   
+  margin: 100px 40px 100px 100px;
+  padding: 100px;
+  max-width: 200px;
+}
+.anco-game{
+  display: flex;
+  width: 150px;
+  justify-content: center;
+}
+
+.anco-game a{
+  text-decoration: none;
+  color: black;
+}

@@ -1,7 +1,12 @@
 <h2>List of Games</h2>
 
 {{#each data}}
-
-    <p>{{this.name}}</p>
-
+    <div class="oneGame">
+     <img src="{{background_image}}" alt="img" width="250px" height="250px">
+     <div class="anco-game">
+         <a href=""><p>{{this.name}}</p></a>
+     </div>
+     
+    </div>
+    
 {{/each}}
