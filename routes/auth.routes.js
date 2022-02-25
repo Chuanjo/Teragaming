@@ -128,8 +128,9 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           });
         }
         req.session.user = user;
+        req.app.locals.isLoggedIn = true // esta es una variable loca accesible en handlebars
         // req.session.user = user._id; 
-        return res.redirect("/profile");
+        return res.redirect("/auth/profile");
       });
     })
 
@@ -148,6 +149,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
         .status(500)
         .render("auth/logout", { errorMessage: err.message });
     }
+    req.app.locals.isLoggedIn = false
     res.redirect("/");
   });
 });
