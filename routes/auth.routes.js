@@ -152,7 +152,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
   });
 });
 
-router.get("/profile", (req, res, next) => {
+router.get("/profile",isLoggedIn, (req, res, next) => {
   res.render("auth/profile");
 });
 

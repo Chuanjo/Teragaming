@@ -28,6 +28,20 @@
     <a href="/">Home</a>
     <a href="/auth/profile">Profile</a>
     <a href="/auth/login">Log In</a>
+    <a href="/auth/logout">Log Out</a>
+    
+    {{#if isLoggedIn}}
+
+    {{!-- {{else}} --}}
+
+    {{/if}}
+
+    {{#if isLoggedOut}}
+
+    {{!-- {{else}} --}}
+
+    {{/if}}
+
   </div>
     {{{body}}}
 
