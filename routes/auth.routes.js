@@ -153,7 +153,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
 });
 
 router.get("/profile", (req, res, next) => {
-  res.render("profile/profile");
+  res.render("auth/profile");
 });
 
 module.exports = router;
