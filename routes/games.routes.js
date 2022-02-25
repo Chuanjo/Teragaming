@@ -1,18 +1,17 @@
 const router = require("express").Router();
-const Rawger = require('rawger');
 const axios = require("axios")
 
-router.get("/", (req, res, next) => {
-  //console.log(process.env.GAMES_API_KEY)
+router.get("/game-list", (req, res, next) => {
   axios.get(`https://api.rawg.io/api/games?key=${process.env.GAMES_API_KEY}`)
   .then((response) => {
-    //console.log(response)
-    console.log(response.data.results.length)
-    console.log(response.data.results)
+    console.log("Hola que tal",response.data.results[0])
+    res.render("games/game-list", {data:response.data.results})
+
+
   })
-
-
-  res.render("index");
+  .catch((err)=>{
+    next(err)
+  })
 });
 
 
