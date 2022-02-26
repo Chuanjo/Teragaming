@@ -156,8 +156,24 @@ router.get("/logout", isLoggedIn, (req, res) => {
   });
 });
 
-router.get("/profile", (req, res, next) => {
-  res.render("auth/profile.hbs")
+router.get("/profile",isLoggedIn, (req, res, next) => {
+  User.findById(req.session.user._id)
+  // console.log("hola",req.session.user._id)
+  .then((user)=>{
+    res.render("auth/profile.hbs", {user})
+  })
+  .catch((err)=>{
+    next(err)
+  })
+});
+router.get("/reviews",isLoggedIn, (req, res, next) => {
+  User.findById(req.session.user._id)
+  .then((user)=>{
+    res.render("auth/reviews.hbs", {user})
+  })
+  .catch((err)=>{
+    next(err)
+  })
 });
 
 module.exports = router;

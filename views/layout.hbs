@@ -16,9 +16,9 @@
         <li class="boton-menu"><a href="">///</a>
         
           <ul class="despe-menu"> 
-            <li><a href="/games/game-list">Games</a></li>
-            <li><a href="/Opinion">Opinions</a></li>
-            <li><a href="/top-games">Top Games</a></li>
+              <li><a href="/games/game-list">Games</a></li>
+              <li><a href="/Opinion">Opinions</a></li>
+              <li><a href="/top-games">Top Games</a></li>
           </ul>
         </li>
       </ul>
@@ -29,8 +29,10 @@
     <a href="/">Home</a>
     
     {{#if isLoggedIn}}
-    <a href="/auth/logout">Log Out</a>
     <a href="/auth/profile">Profile</a>
+    <a href="/auth/reviews">Your reviews</a>
+    <a href="/auth/logout">Log Out</a>
+
 
     {{else}}
     <a href="/auth/login">Log In</a>

@@ -1,27 +1,29 @@
-{{!-- {{#each data.}} --}}
-<h1>{{data.name}} TITULO</h1>
+{{!-- {{#each data}} --}}
+<h1>TITULO: <p>{{data.name}}</p></h1>
 <div>
     <div>
         <h4>Imagen</h4>
         
-        <img src="{{data.results.url}}" alt="portada">
+        <img src="{{data.results.background_image}}" alt="portada">
 
     </div>
     <div>
         <h4>Nota del juego</h4>
-        <p>{{data.rating}}</p>
+        <p>{{this.rating}}</p>
 
     </div>
     <div>
         <h4>Descripcion</h4>
-        <p>{{data.description}}</p>
+        <p>{{this.description}}</p>
 
     </div>
     <div>
         <h4>Release</h4>
-        <p>{{data.released}}</p>
+        <p>{{this.released}}</p>
 
     </div>
 </div>
 
 {{!-- {{/each}} --}}
+
+
