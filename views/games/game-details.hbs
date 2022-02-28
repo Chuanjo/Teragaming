@@ -1,29 +1,19 @@
-{{!-- {{#each data}} --}}
-<h1>TITULO: <p>{{data.name}}</p></h1>
-<div>
-    <div>
-        <h4>Imagen</h4>
-        
-        <img src="{{data.results.background_image}}" alt="portada">
 
+<h3 class="game-title">TITULO: <p>{{data.name}}</p></h3>
+<div class="container">
+    <div> 
+        <img src="{{data.background_image}}" alt="portada" width="500px" height="400px">
     </div>
-    <div>
-        <h4>Nota del juego</h4>
-        <p>{{this.rating}}</p>
+    <div class="data-game">
+        <h4>Nota del juego: {{data.rating}}</h4>
+        <p></p>
 
-    </div>
-    <div>
-        <h4>Descripcion</h4>
-        <p>{{this.description}}</p>
+        <h4>Descripcion: </h4>
+        <p>{{data.description_raw}}</p>
+        <h4>Release: {{data.released}}</h4>
+        <p></p>
 
-    </div>
-    <div>
-        <h4>Release</h4>
-        <p>{{this.released}}</p>
-
-    </div>
+            <button><a href="/games/edit/{{data.id}}">Add to favourite</a></button>
 </div>
-
-{{!-- {{/each}} --}}
 
 

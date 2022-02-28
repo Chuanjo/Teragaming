@@ -1,0 +1,19 @@
+<h2>Reviews</h2> 
+
+    
+<form action="/games/create/{{data.id}}/{{data.name}}" method="POST">
+    <h5>Game: {{data.name}}</h5>
+    <label for="score"><h5>Your Score</h5></label>
+    <input type="number" name="score"><br>
+    <label for="status"><h5>Status</h5></label>
+    <input type="text" name="status"><br>
+    <label for="createBy">User:{{createBy.user}}</label>
+    <div>
+        <textarea type="text"class="comment-box" name="comment" cols="40" rows="6" maxlength="250" wrap="hard" placeholder="Write here your Opinion"></textarea><br>
+        <div class="comment-char">
+        <p>*Max. 250 characters*</p>
+        </div>
+        <button class="btn-save">Save it</button>
+    </div>
+
+</form>

@@ -1,3 +1,4 @@
+const { default: mongoose } = require("mongoose");
 const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema(
@@ -10,7 +11,7 @@ const userSchema = new Schema(
     email: {
       type: String,
       unique: true,
-    },
+    }
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

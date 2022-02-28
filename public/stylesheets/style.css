@@ -90,3 +90,38 @@ h1 {
   justify-content: center;
   padding: 50px 50px;
 }
+.comment-box{
+  resize:none; 
+}
+
+.comment-char{
+  font-size:small;
+}
+
+.btn-save{
+  border-radius: 61px 64px 63px 71px / 67px 68px 24px 24px; 
+  border: 10px double #000000;
+}
+
+.container{
+    display:flex;
+}
+.data-game{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: stretch;
+
+}.data-game {
+  text-decoration: none;
+  border-radius: 10px;
+  border: 10px double #dd9103;
+}
+
+.game-title{
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Shadows Into Light', cursive;
+}
