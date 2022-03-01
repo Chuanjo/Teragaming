@@ -1,31 +1,27 @@
 body {
   margin: 0px;
   padding: 50px 0px;
-    background: repeating-linear-gradient(
-      45deg,
-      rgb(0, 0, 0) 20px,
-      rgb(0, 0, 0) 40px,
-      #DF6C4F 40px,
-      #DF6C4F 60px
-    );
-}
-
-
-.logo-name{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background:fixed;
+  background-image: url(/images/d2SwPh.jpg);
 }
 
 
 h1 {
   color: 15px;
 }
+.logo-name{
+  padding-left: 25%;
+}
 
+
+.menu{
+  position: relative;
+  padding-left: 40px;
+}
 .menu ul{
   list-style: none;
   margin: 0;
-}
+} 
 .menu ul li{
   padding: 15px;
   position: relative;
@@ -43,7 +39,7 @@ h1 {
 }
 .menu ul li a{
   text-decoration: none;
-  color: black;
+  color: #dd9103;
 }
 
 
@@ -53,14 +49,15 @@ h1 {
   padding: 0;
   margin-left: -30px;
   width: 40px;
+  position: fixed;
 }
 
 .despe-menu{
-  background-color: rgb(221, 125, 14);
+  color: #dd9103;
   font-size: 20px;
 }
 .despe-menu a{
-  color: black;
+  color: #dd9103;
 }
 
 .menu2{
@@ -70,8 +67,7 @@ h1 {
 }
 .menu2 a{
   text-decoration: none;
-  background-color: rgb(221, 126, 17);
-  color: black;
+  color: #dd9103;
   border-radius: 5px;
 }
 
@@ -152,5 +148,7 @@ h1 {
 .game-title{
   text-align: center;
   font-size: 40px;
-  font-family: 'Shadows Into Light', cursive;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+
