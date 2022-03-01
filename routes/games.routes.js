@@ -47,21 +47,23 @@ router.get("/game-details/:id", (req, res, next)=>{
 //Edit the information of the game.
 router.get("/edit/:id", (req, res, next)=>{
   const{id} = req.params
-GameModel.findOne({apiId: id})
-.then((response)=>{
-  if (response.createBy === req.session.user._id){
-    res.render("games/game-list", {
-      errorMessage: "Game already added"
-    })
-  }
-})
+  
+// GameModel.findOne({apiId: id})
+// .then((response)=>{
+//   console.log()
+//   if (response.createBy === req.session.user._id){
+//     res.render("games/game-list", {
+//       errorMessage: "Game already added"
+//     })
+//   }
+// })
 
 
-  // axios.get(`https://api.rawg.io/api/games/${id}?key=${process.env.GAMES_API_KEY}`)
-  // .then((response)=>{
-  //   // console.log("adios",response.data)
-  //   res.render("games/edit", {data:response.data})
-  // })
+  axios.get(`https://api.rawg.io/api/games/${id}?key=${process.env.GAMES_API_KEY}`)
+  .then((response)=>{
+    // console.log("adios",response.data)
+    res.render("games/edit", {data:response.data})
+  })
 })
 
 //create the new details by user

@@ -116,7 +116,7 @@ h1 {
   align-items: flex-start;
   align-content: stretch;
   border-radius: 10px;
-  border: 5px solid #dd9103;
+  border: 5px double #dd9103;
 
 }
 .data-game button{
