@@ -6,7 +6,8 @@
 <p>Score: {{score}}</p>
 <p>Status: {{status}}</p>
 <p>Comment: {{comment}}</p>
-
-<button><a href="">Delete</a></button>
+<form action="/auth/{{id}}/delete" method="POST">
+<button>Delete</button>
+</form>
 {{/each}}
 </div>

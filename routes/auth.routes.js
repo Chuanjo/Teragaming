@@ -189,4 +189,20 @@ router.get("/your-reviews", isLoggedIn, (req, res, next) => {
   })
 
 })
+router.post("/:id/delete", async (req, res, next) => {
+
+  try {
+    const { id } = req.params
+  
+    // Remove from DB
+    await gameModel.findByIdAndDelete(id)
+  
+    //Send back to profile after delete
+    res.redirect("/auth/your-reviews")
+  }
+  catch(err) {
+    next(err)
+  }
+
+})
 module.exports = router;

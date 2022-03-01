@@ -10,23 +10,11 @@ router.get("/game-list", (req, res, next) => {
   .then((response) => {
     // console.log("Hola que tal",response.data.background_image[0])
     res.render("games/game-list", {data:response.data.results})
-
-
   })
   .catch((err)=>{
     next(err)
   })
 });
-
-
-// router.post("games/game-list",(req,res,next)=>{
-//   const{id} = req.params
-//   axios.get(`https://api.rawg.io/api/games/${id}?key=${process.env.GAMES_API_KEY}`)
-//   then((response)=>{
-
-//   })
-// })
-
 
 //router show the details of the game by Id.
 router.get("/game-details/:id", (req, res, next)=>{
@@ -42,28 +30,22 @@ router.get("/game-details/:id", (req, res, next)=>{
   })
 })
 
-
-
 //Edit the information of the game.
-router.get("/edit/:id", (req, res, next)=>{
-  const{id} = req.params
+router.get("/edit/:id/:name", (req, res, next)=>{
+  const{id, name} = req.params
   
-// GameModel.findOne({apiId: id})
-// .then((response)=>{
-//   console.log()
-//   if (response.createBy === req.session.user._id){
-//     res.render("games/game-list", {
-//       errorMessage: "Game already added"
-//     })
-//   }
-// })
-
-
-  axios.get(`https://api.rawg.io/api/games/${id}?key=${process.env.GAMES_API_KEY}`)
-  .then((response)=>{
-    // console.log("adios",response.data)
-    res.render("games/edit", {data:response.data})
-  })
+GameModel.findOne({apiId: id})
+.then((response)=>{
+  console.log("Holaaaa")
+  if (response && response.createBy == req.session.user._id){
+    console.log("Dentrooo")
+    res.render("games/game-list", {
+      errorMessage: "Game already added"
+    })
+  } else {
+    res.render("games/edit", {name, id})
+  }
+})
 })
 
 //create the new details by user
@@ -86,6 +68,5 @@ router.post("/create/:id/:name",isLoggedIn, (req, res, next) =>{
       next(err)
     })
   })
-  
   
 module.exports = router;
