@@ -1,6 +1,5 @@
 body {
   padding: 50px 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 
@@ -51,7 +50,7 @@ h1 {
 
 .menu2{
   text-align:right;
-  margin: 10px 50px;
+  margin: 10px 20px;
   font-size: 30px;
 }
 .menu2 a{
@@ -64,19 +63,21 @@ h1 {
 .oneGame{
   display: inline-flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   flex-grow: 1;
   width: auto;
   height: auto;   
-  margin: 100px 40px 100px 100px;
-  padding: 100px;
+  margin: 50px 85px;
+  padding: 0px 150px 10px 150px;
   max-width: 200px;
+  border: 2px solid #000000; 
+  background-color: #dd9103; 
 }
 .anco-game{
   display: flex;
-  width: 150px;
+  width: 230px;
   justify-content: center;
 }
 
@@ -113,11 +114,23 @@ h1 {
   justify-content: center;
   align-items: flex-start;
   align-content: stretch;
-
-}.data-game {
-  text-decoration: none;
   border-radius: 10px;
-  border: 10px double #dd9103;
+  border: 5px solid #dd9103;
+
+}
+.data-game button{
+  border: 10px #dd9103;
+  background-color: white;
+
+}
+
+.data-game button:hover{
+  background-color: #dd9103;
+}
+
+.data-game a{
+  text-decoration: none;
+  color: #000000;  
 }
 
 .game-title{
