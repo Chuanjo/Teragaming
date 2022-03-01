@@ -17,24 +17,51 @@ router.get("/game-list", (req, res, next) => {
     next(err)
   })
 });
+
+
+// router.post("games/game-list",(req,res,next)=>{
+//   const{id} = req.params
+//   axios.get(`https://api.rawg.io/api/games/${id}?key=${process.env.GAMES_API_KEY}`)
+//   then((response)=>{
+
+//   })
+// })
+
+
 //router show the details of the game by Id.
 router.get("/game-details/:id", (req, res, next)=>{
   const{id} = req.params //se pone antes del axios para que pueda inicializarse la ID.
   // console.log("hola",id)
   axios.get(`https://api.rawg.io/api/games/${id}?key=${process.env.GAMES_API_KEY}`)
   .then((response)=>{
-    // console.log("adios",response.data)
+    // console.log("adios",id,response.data.id)
     res.render("games/game-details", {data:response.data})
   })
+  .catch((err)=>{
+    next(err)
+  })
 })
+
+
+
 //Edit the information of the game.
 router.get("/edit/:id", (req, res, next)=>{
   const{id} = req.params
-  axios.get(`https://api.rawg.io/api/games/${id}?key=${process.env.GAMES_API_KEY}`)
-  .then((response)=>{
-    // console.log("adios",response.data)
-    res.render("games/edit", {data:response.data})
-  })
+GameModel.findOne({apiId: id})
+.then((response)=>{
+  if (response.createBy === req.session.user._id){
+    res.render("games/game-list", {
+      errorMessage: "Game already added"
+    })
+  }
+})
+
+
+  // axios.get(`https://api.rawg.io/api/games/${id}?key=${process.env.GAMES_API_KEY}`)
+  // .then((response)=>{
+  //   // console.log("adios",response.data)
+  //   res.render("games/edit", {data:response.data})
+  // })
 })
 
 //create the new details by user
@@ -49,11 +76,9 @@ router.post("/create/:id/:name",isLoggedIn, (req, res, next) =>{
       status:status,
       comment:comment,
       createBy:req.session.user._id
-      
     })
     .then(() =>{
       res.redirect("/auth/profile")
-      
     })
     .catch((err)=>{
       next(err)
