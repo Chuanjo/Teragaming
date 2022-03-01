@@ -40,7 +40,7 @@ router.get("/edit/:id", (req, res, next)=>{
 //create the new details by user
 router.post("/create/:id/:name",isLoggedIn, (req, res, next) =>{
   const {id, name} = req.params
-  const {score, status,comment,createBy} = req.body
+  const {score, status,comment} = req.body
   // console.log("hola",id,name)
   GameModel.create({
       name:name,
@@ -48,16 +48,17 @@ router.post("/create/:id/:name",isLoggedIn, (req, res, next) =>{
       score:score,
       status:status,
       comment:comment,
-      createBy:createBy
-  })
-  .then(() =>{
+      createBy:req.session.user._id
+      
+    })
+    .then(() =>{
       res.redirect("/auth/profile")
-
-  })
-  .catch((err)=>{
+      
+    })
+    .catch((err)=>{
       next(err)
+    })
   })
-})
-
-
+  
+  
 module.exports = router;
