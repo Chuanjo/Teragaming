@@ -1,4 +1,5 @@
 body {
+  margin: 0px;
   padding: 50px 0px;
 }
 
@@ -69,8 +70,8 @@ h1 {
   flex-grow: 1;
   width: auto;
   height: auto;   
-  margin: 50px 85px;
-  padding: 0px 150px 10px 150px;
+  margin: 50px 20px;
+  padding: 0px 200px 10px 200px;
   max-width: 200px;
   border: 2px solid #000000; 
   background-color: #dd9103; 

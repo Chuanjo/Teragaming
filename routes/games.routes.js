@@ -74,8 +74,8 @@ router.post("/create/:id/:name",isLoggedIn, (req, res, next) =>{
   })
   .catch((err)=>{
       next(err)
+    })
   })
-})
-
-
+  
+  
 module.exports = router;
