@@ -27,6 +27,23 @@ router.get("/game-details/:id", (req, res, next)=>{
     res.render("games/game-details", {data:response.data})
   })
 })
+
+router.get("/:id/reviews", isLoggedIn, (req, res, next) => {
+  const { id } = req.params
+  console.log(id)
+
+  GameModel.findById(id)
+  .then((oneGame) => {
+    console.log("hola",oneGame)
+    // render game in review
+    res.render(`auth/reviews`,{oneGame})
+  })
+  .catch((err) => {
+    next(err)
+  })
+
+})
+
 //Edit the information of the game.
 router.get("/edit/:id", (req, res, next)=>{
   const{id} = req.params
@@ -40,7 +57,7 @@ router.get("/edit/:id", (req, res, next)=>{
 //create the new details by user
 router.post("/create/:id/:name",isLoggedIn, (req, res, next) =>{
   const {id, name} = req.params
-  const {score, status,comment,createBy} = req.body
+  const {score, status,comment} = req.body
   // console.log("hola",id,name)
   GameModel.create({
       name:name,
@@ -48,10 +65,11 @@ router.post("/create/:id/:name",isLoggedIn, (req, res, next) =>{
       score:score,
       status:status,
       comment:comment,
-      createBy:createBy
+      createBy:req.session.user._id
   })
-  .then(() =>{
-      res.redirect("/auth/profile")
+  .then((review) =>{
+    console.log(review.createBy)
+      res.redirect(`/games/${review._id}/reviews`)
 
   })
   .catch((err)=>{
