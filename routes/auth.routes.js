@@ -198,7 +198,7 @@ router.post("/:id/delete", async (req, res, next) => {
     await gameModel.findByIdAndDelete(id)
   
     //Send back to profile after delete
-    res.redirect("/auth/profile")
+    res.redirect("/auth/your-reviews")
   }
   catch(err) {
     next(err)
