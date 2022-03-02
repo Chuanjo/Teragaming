@@ -27,17 +27,17 @@
     </div>
     
   <div class="menu2">
-    <a href="/">Home</a>
+    <a href="/" class="menu2-a">Home</a>
     
     {{#if isLoggedIn}}
-    <a href="/auth/profile">Profile</a>
-    <a href="/auth/your-reviews">Your reviews</a>
-    <a href="/auth/logout">Log Out</a>
+    <a href="/auth/profile" class="menu2-a">Profile</a>
+    <a href="/auth/your-reviews" class="menu2-a">Your reviews</a>
+    <a href="/auth/logout" class="menu2-a">Log Out</a>
 
 
     {{else}}
-    <a href="/auth/login">Log In</a>
-    <a href="/auth/signup">Sign Up</a>
+    <a href="/auth/login" class="menu2-a">Log In</a>
+    <a href="/auth/signup" class="menu2-a">Sign Up</a>
     
     {{/if}}
     

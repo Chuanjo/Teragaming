@@ -1,14 +1,21 @@
 body {
   margin: 0px;
   padding: 50px 0px;
-  background:scroll;
+  background-size: 100% 100%;
   background-image: url(/images/d2SwPh.jpg);
 }
 
+.title-rev{
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  background: -webkit-linear-gradient(#dd9103, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-h1 {
-  color: 15px;
 }
+
+
 .logo-name{
   padding-left: 25%;
 }
@@ -27,7 +34,8 @@ h1 {
   position: relative;
 }
 .menu ul ul{
-  transition: all 0.3s;
+  transition: all 1s;
+
   opacity: 0;
   position: absolute;
   visibility: hidden;
@@ -68,7 +76,9 @@ h1 {
 .menu2 a{
   text-decoration: none;
   color: #dd9103;
-  border-radius: 5px;
+}
+.menu2-a{
+  padding-left: 15px;
 }
 
 .oneGame{
@@ -80,7 +90,7 @@ h1 {
   flex-grow: 1;
   width: auto;
   height: auto;   
-  margin: 50px 20px;
+  margin: 50px 45px;
   padding: 0px 200px 10px 200px;
   max-width: 200px;
   border: 2px solid #000000; 
@@ -149,6 +159,145 @@ h1 {
   text-align: center;
   font-size: 40px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #dd910369;
+  outline: none;
+  background: transparent;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #dd9103;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box a:hover {
+  background: #dd9103;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #dd9103,
+              0 0 25px #dd9103,
+              0 0 50px #dd9103,
+              0 0 100px #dd9103;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #dd9103);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #dd9103);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #dd9103);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #dd9103);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+.login-btn{
+  color: transparent;
+  background-color: transparent;
+  border: none;
 }
 
 
