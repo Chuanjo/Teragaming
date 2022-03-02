@@ -1,6 +1,7 @@
-<h2>Sign Up</h2>
-
+<div class="signup-box">
+<h3>Sign Up</h3>
 <form action="/auth/signup" method="POST">
+<div class="user-box">
    <label> Username
       <input type="text" name="username">
    </label>
@@ -10,10 +11,20 @@
    <label> Password
       <input type="password" name="password">
    </label>
+   </div>
 
-   <button type="submit">Submit</button>
-</form>
-
+   <button class="signup-btn">
+       <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+      </button>
+<div class="error-m">
 {{#if errorMessage}}
    {{errorMessage}}
+   
 {{/if}}
+</div>
+</form>
+</div>
