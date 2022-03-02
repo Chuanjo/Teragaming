@@ -86,7 +86,7 @@ router.post("/create/:id/:name",isLoggedIn, (req, res, next) =>{
       score:score,
       status:status,
       comment:comment,
-      createBy:req.session.user 
+      createBy:req.session.user
     })
     .then(() =>{
       res.redirect("/auth/profile")

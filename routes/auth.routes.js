@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const gameModel = require("../models/game.model")
-const UserModel = require("../models/User.model")
 
 // ℹ️ Handles password encryption
 const bcrypt = require("bcrypt");
@@ -53,7 +52,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
     if (found) {
       return res
         .status(400)
-        .render("auth.signup", { errorMessage: "Username already taken." });
+        .render("auth/signup", { errorMessage: "Username already taken." });
     }
 
     // if user is not found, create a new user - start with hashing the password
@@ -168,8 +167,9 @@ router.get("/profile",isLoggedIn, (req, res, next) => {
     next(err)
   })
 });
-router.get("/reviews",isLoggedIn, (req, res, next) => {
-  User.findById(req.session.user._id)
+router.get("/your-reviews",isLoggedIn, (req, res, next) => {
+  gameModel.findById(req.params._id)
+  User.findById(req.session.user)
   .then((user)=>{
     res.render("auth/your-reviews.hbs", {user})
   })
@@ -178,10 +178,12 @@ router.get("/reviews",isLoggedIn, (req, res, next) => {
   })
 });
 router.get("/opinions", isLoggedIn, (req, res, next) => {
-  const{id} = req.params
-  gameModel.find(id)
+  const{username} = req.session.user
+  // console.log("hola",username)
+  gameModel.find()
+  .populate("createBy")
   .then((showAll) => {
-    console.log("hola",showAll)
+    // console.log("hola",showAll)
     // render games in review
     res.render(`auth/opinions`, {showAll})
   })
@@ -190,6 +192,22 @@ router.get("/opinions", isLoggedIn, (req, res, next) => {
   })
 
 })
+router.get("/opinions/:id/", isLoggedIn, (req, res, next) => {
+  // console.log("hola",username)
+  gameModel.find()
+  .populate("createBy")
+  .then((showAll) => {
+    // console.log("hola",showAll)
+    // render games in review
+    res.render(`auth/game-opinion`, {showAll})
+  })
+  .catch((err) => {
+    next(err)
+  })
+
+})
+
+
 router.post("/:id/delete", async (req, res, next) => {
 
   try {
