@@ -15,6 +15,7 @@ const User = require("../models/User.model");
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
+const Game = require("../models/game.model");
 
 router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
@@ -53,7 +54,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
     if (found) {
       return res
         .status(400)
-        .render("auth.signup", { errorMessage: "Username already taken." });
+        .render("auth/signup", { errorMessage: "Username already taken." });
     }
 
     // if user is not found, create a new user - start with hashing the password
@@ -168,10 +169,11 @@ router.get("/profile",isLoggedIn, (req, res, next) => {
     next(err)
   })
 });
-router.get("/reviews",isLoggedIn, (req, res, next) => {
-  User.findById(req.session.user._id)
-  .then((user)=>{
-    res.render("auth/your-reviews.hbs", {user})
+router.get("/your-reviews",isLoggedIn, (req, res, next) => {
+  gameModel.find({createBy:req.session.user._id})
+  .then((yourGame)=>{
+    console.log(yourGame)
+    res.render("auth/your-reviews.hbs", {yourGame})
   })
   .catch((err)=>{
     next(err)

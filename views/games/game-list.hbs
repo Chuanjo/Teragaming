@@ -1,5 +1,20 @@
 <h3 class="title-rev">Games List</h3>
 <div class="container-games">
+
+{{#if firstPage}}
+<form action="/games/game-list/previous">
+    <button disabled="true">Previous Page</button>
+</form>
+{{else}}
+<form action="/games/game-list/previous">
+    <button>Previous page</button>
+</form>
+{{/if}}
+
+<form action="/games/game-list/next">
+    <button>Next page</button>
+</form>
+
 {{#each data}}
     <div class="oneGame">
      <img src="{{background_image}}" alt="img" width="400px" height="225px">
@@ -11,9 +26,9 @@
 
 {{/each}}
 
-{{#if errorMessage}}
+{{!-- {{#if errorMessage}}
     <p style="color: red;">{{errorMessage}}!!!</p>
-{{/if}}
+{{/if}} --}}
 
 {{#if firstPage}}
 <form action="/games/game-list/previous">

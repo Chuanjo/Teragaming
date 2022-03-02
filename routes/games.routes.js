@@ -66,7 +66,7 @@ GameModel.findOne({apiId: id})
   // console.log("Holaaaa")
   if (response && response.createBy == req.session.user._id){
     // console.log("Dentrooo")
-    res.render("games/game-list", {
+    res.render("index", {
       errorMessage: "Game already added"
     })
   } else {
@@ -86,7 +86,7 @@ router.post("/create/:id/:name",isLoggedIn, (req, res, next) =>{
       score:score,
       status:status,
       comment:comment,
-      createBy:req.session.user 
+      createBy:req.session.user._id
     })
     .then(() =>{
       res.redirect("/auth/profile")

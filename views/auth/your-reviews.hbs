@@ -1,12 +1,12 @@
 <h3 class="title-rev">Your reviews</h3>
 
-{{!-- {{#each showAll}} --}}
+{{#each yourGame}}
 <div class="container-reviews">
   <div class="comment-p">
-<h4>Game:</h4> <p> {{showAll.name}}</p>
-<h4>Score:</h4><p>{{showAll.score}}</p>
-<h4>Status:</h4><p>{{showAll.status}}</p>
-  <h4>Comment:</h4><p>{{showAll.comment}}</p>
+<h4>Game:</h4> <p> {{name}}</p>
+<h4>Score:</h4><p>{{score}}</p>
+<h4>Status:</h4><p>{{status}}</p>
+  <h4>Comment:</h4><p>{{comment}}</p>
   </div>  
   <div class="btn-revi">
 <form action="/auth/{{id}}/delete" method="POST">
@@ -14,4 +14,4 @@
     </form>
     </div>
   </div>
-{{!-- {{/each}} --}}
+{{/each}}
