@@ -1,0 +1,18 @@
+<h3 class="title-rev">Reviews</h3>
+
+{{#each showAll}}
+<div class="container-reviews">
+  <div class="comment-p">
+<h4>User:</h4><p>{{createBy}}</p>
+<h4>Game:</h4> <p> {{name}}</p>
+<h4>Score:</h4><p>{{score}}</p>
+<h4>Status:</h4><p>{{status}}</p>
+  <h4>Comment:</h4><p>{{comment}}</p>
+  </div>  
+  <div class="btn-revi">
+<form action="/auth/{{id}}/delete" method="POST">
+      <button>Delete</button>
+    </form>
+    </div>
+  </div>
+{{/each}}

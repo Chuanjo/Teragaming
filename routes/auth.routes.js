@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const gameModel = require("../models/game.model")
+const UserModel = require("../models/User.model")
 
 // ℹ️ Handles password encryption
 const bcrypt = require("bcrypt");
@@ -176,13 +177,13 @@ router.get("/reviews",isLoggedIn, (req, res, next) => {
     next(err)
   })
 });
-router.get("/your-reviews", isLoggedIn, (req, res, next) => {
-
-  gameModel.find()
+router.get("/opinions", isLoggedIn, (req, res, next) => {
+  const{id} = req.params
+  gameModel.find(id)
   .then((showAll) => {
-    // console.log("hola",showAll)
+    console.log("hola",showAll)
     // render games in review
-    res.render("auth/your-reviews",{showAll})
+    res.render(`auth/opinions`, {showAll})
   })
   .catch((err) => {
     next(err)

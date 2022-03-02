@@ -8,14 +8,14 @@
      </div>
      
     </div>
-    
+
 {{/each}}
 
 {{#if errorMessage}}
     <p style="color: red;">{{errorMessage}}!!!</p>
 {{/if}}
 
-<form action="/games/game-list/{{pageNum}}">
+    <form action="/games/game-list/{{this.next}}">
     <button>Next page</button>
 </form>
 
