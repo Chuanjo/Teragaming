@@ -6,8 +6,26 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 //show the list of the games.
 router.get("/game-list", (req, res, next) => {
-  axios.get(`https://api.rawg.io/api/games?key=${process.env.GAMES_API_KEY}`)
+  axios.get(`https://api.rawg.io/api/games?key=${process.env.GAMES_API_KEY}`)// anadir despues de la llave "&page={}"
   .then((response) => {
+    // console.log("Hola que tal",response.data.background_image[0])
+    res.render("games/game-list", {data:response.data.results})
+  })
+  .catch((err)=>{
+    next(err)
+  })
+});
+
+router.get("/game-list/:pageNum", (req, res, next) => {
+  const{pageNum} = req.params
+
+  // if (pageNum >= 0){
+  //   return pageNum++
+  // }
+  axios.get(`https://api.rawg.io/api/games?key=${process.env.GAMES_API_KEY}&page=2`)
+
+  .then((response) => {
+    
     // console.log("Hola que tal",response.data.background_image[0])
     res.render("games/game-list", {data:response.data.results})
   })
