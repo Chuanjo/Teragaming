@@ -15,7 +15,17 @@
     <p style="color: red;">{{errorMessage}}!!!</p>
 {{/if}}
 
-<form action="/games/game-list/{{data.next}}">
+{{#if firstPage}}
+<form action="/games/game-list/previous">
+    <button disabled="true">Previous Page</button>
+</form>
+{{else}}
+<form action="/games/game-list/previous">
+    <button>Previous page</button>
+</form>
+{{/if}}
+
+<form action="/games/game-list/next">
     <button>Next page</button>
 </form>
 

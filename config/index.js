@@ -58,7 +58,7 @@ module.exports = (app) => {
       saveUninitialized: false,
       store: MongoStore.create({
         mongoUrl: MONGO_URI,
-        ttl: 60
+        ttl: 60*60*12
       }),
     })
   );
