@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const gameModel = require("../models/game.model")
-const UserModel = require("../models/User.model")
 
 // ℹ️ Handles password encryption
 const bcrypt = require("bcrypt");
@@ -180,10 +179,12 @@ router.get("/your-reviews",isLoggedIn, (req, res, next) => {
   })
 });
 router.get("/opinions", isLoggedIn, (req, res, next) => {
-  const{id} = req.params
-  gameModel.find(id)
+  const{username} = req.session.user
+  // console.log("hola",username)
+  gameModel.find()
+  .populate("createBy")
   .then((showAll) => {
-    console.log("hola",showAll)
+    // console.log("hola",showAll)
     // render games in review
     res.render(`auth/opinions`, {showAll})
   })
@@ -192,6 +193,22 @@ router.get("/opinions", isLoggedIn, (req, res, next) => {
   })
 
 })
+router.get("/opinions/:id/", isLoggedIn, (req, res, next) => {
+  // console.log("hola",username)
+  gameModel.find()
+  .populate("createBy")
+  .then((showAll) => {
+    // console.log("hola",showAll)
+    // render games in review
+    res.render(`auth/game-opinion`, {showAll})
+  })
+  .catch((err) => {
+    next(err)
+  })
+
+})
+
+
 router.post("/:id/delete", async (req, res, next) => {
 
   try {
