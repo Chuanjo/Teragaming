@@ -4,30 +4,39 @@ const UserModel = require("../models/User.model")
 const GameModel = require("../models/game.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+let baseUrl = `https://api.rawg.io/api/games?key=${process.env.GAMES_API_KEY}`
+let baseUrlNext;
+let baseUrlPrevious;
+
 //show the list of the games.
 router.get("/game-list", (req, res, next) => {
-  axios.get(`https://api.rawg.io/api/games?key=${process.env.GAMES_API_KEY}`)// anadir despues de la llave "&page={}"
+  baseUrl = `https://api.rawg.io/api/games?key=${process.env.GAMES_API_KEY}`
+  axios.get(baseUrl)
   .then((response) => {
-    // console.log("Hola que tal",response.data.next)
-    res.render("games/game-list", {data:response.data.results})
+    baseUrlNext = response.data.next
+    baseUrlPrevious = response.data.previous
+    let firstPage = response.data.previous === null
+    res.render("games/game-list", {data:response.data.results, firstPage})
   })
   .catch((err)=>{
     next(err)
   })
 });
 
-router.get("/game-list/:pageNum", (req, res, next) => {
-  const{pageNum} = req.params
-
-  // if (pageNum >= 0){
-  //   return pageNum++
-  // }
-  axios.get(`https://api.rawg.io/api/games?key=${process.env.GAMES_API_KEY}&page=${pageNum}`)
-  console.log("hola")
+router.get("/game-list/:page", (req, res, next) => {
+  const {page} = req.params
+  let gamesUrl;
+  if (page === "next") {
+    gamesUrl = baseUrlNext
+  } else {
+    gamesUrl = baseUrlPrevious
+  }
+  axios.get(gamesUrl)
   .then((response) => {
-    
-    // console.log("Hola que tal",response.data.background_image[0])
-    res.render("games/game-list", {data:response.data.results.next})
+    baseUrlNext = response.data.next
+    baseUrlPrevious = response.data.previous
+    let firstPage = response.data.previous === null
+    res.render("games/game-list", {data:response.data.results, firstPage})
   })
   .catch((err)=>{
     next(err)
