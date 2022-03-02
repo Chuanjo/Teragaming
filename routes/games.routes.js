@@ -27,7 +27,7 @@ router.get("/game-list/:pageNum", (req, res, next) => {
   .then((response) => {
     
     // console.log("Hola que tal",response.data.background_image[0])
-    res.render("games/game-list", {data:response.data.results})
+    res.render("games/game-list", {data:response.data.results.next})
   })
   .catch((err)=>{
     next(err)
