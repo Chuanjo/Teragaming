@@ -115,9 +115,6 @@ body {
 
 /* Commment box */
 
-.container-comments{
-  position:relative ;
-}
 
 
 
@@ -133,18 +130,24 @@ body {
   justify-content: flex-start;
   align-items: normal;
   align-content: normal;
+
   
   
   border-radius: 10px;
-  border: 5px double #000000;
-  background-color: #dd9103;
+
+  background-color: #dd910362;
+}
+.container-comments h3{
+  margin-left: 10px;
 }
 
 
-.game-comments{
-
+.container-comments h4{
+  margin-left: 10px;
 }
-
+.container-comments p{
+  margin-left: 10px;
+}
 .comment-box{
   resize:none; 
 }
@@ -170,17 +173,18 @@ body {
   align-content: stretch;
   border-radius: 10px;
   border: 5px double #000000;
-  background-color: #dd9103;
+  background-color: #dd910362;
 
 }
 .data-game button{
-  border: 10px #dd9103;
   background-color: #dd9103;
+  border: 1px solid;
+  margin-left:5px ;
 
 }
 
 .data-game button:hover{
-  background-color: rgb(97, 66, 9);
+  background-color: #dd9103
 }
 
 .data-game a{
