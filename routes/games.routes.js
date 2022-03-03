@@ -44,7 +44,7 @@ router.get("/game-list/:page", (req, res, next) => {
 });
 
 //router show the details of the game by Id.
-router.get("/game-details/:id", (req, res, next)=>{
+router.get("/game-details/:id", isLoggedIn, (req, res, next)=>{
   const{id} = req.params //se pone antes del axios para que pueda inicializarse la ID.
   let gameData;
   axios.get(`https://api.rawg.io/api/games/${id}?key=${process.env.GAMES_API_KEY}`)
