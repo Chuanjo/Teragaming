@@ -1,6 +1,5 @@
 <h3 class="title-rev">Games List</h3>
-<div class="container-games">
-
+<div class="page-btn">
 {{#if firstPage}}
 <form action="/games/game-list/previous">
     <button disabled="true">Previous Page</button>
@@ -14,7 +13,8 @@
 <form action="/games/game-list/next">
     <button>Next page</button>
 </form>
-
+</div>
+<div class="container-games">
 {{#each data}}
     <div class="oneGame">
      <img src="{{background_image}}" alt="img" width="400px" height="225px">

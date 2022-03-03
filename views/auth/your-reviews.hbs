@@ -3,14 +3,17 @@
 {{#each yourGame}}
 <div class="container-reviews">
   <div class="comment-p">
-<h4>Game:</h4> <p> {{name}}</p>
+<h4>Game:</h4><p> {{name}}</p>
 <h4>Score:</h4><p>{{score}}</p>
 <h4>Status:</h4><p>{{status}}</p>
   <h4>Comment:</h4><p>{{comment}}</p>
   </div>  
-  <div class="btn-revi">
+  <div>
 <form action="/auth/{{id}}/delete" method="POST">
-      <button>Delete</button>
+      <button class="btn-slice" href="#">
+  <div class="top"><span>DELETE</span></div>
+<div class="bottom"><span>DELETE</span></div>
+</button>
     </form>
     </div>
   </div>
