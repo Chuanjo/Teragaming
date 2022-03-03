@@ -101,7 +101,9 @@ router.post("/create/:id/:name",isLoggedIn, (req, res, next) =>{
   })
 
   router.post("/game-search", (req, res, next) =>{
-    res.redirect("games/game-search")
+    
+
+    res.redirect("/games/game-search")
   })
 
   
