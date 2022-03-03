@@ -96,14 +96,21 @@ router.post("/create/:id/:name",isLoggedIn, (req, res, next) =>{
     })
   })
 
-  router.get("/game-search",(req,res,next)=>{
-    res.render("games/game-search")
-  })
+  // router.get("/game-search",(req,res,next)=>{
+  //   res.render("games/game-search")
+  // })
 
   router.post("/game-search", (req, res, next) =>{
-    
-
-    res.redirect("/games/game-search")
+    console.log("holaaaaa",req.body)
+    axios.get(`https://api.rawg.io/api/games?key=${process.env.GAMES_API_KEY}&search=${req.body.search}`)
+    .then((searchResult)=>{
+      const search = searchResult.data.results
+      console.log(searchResult.data.results)
+      res.render("games/game-search", {search} )
+    })
+    .catch((err)=>{
+      next(err)
+    })
   })
 
   
