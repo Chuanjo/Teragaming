@@ -1,12 +1,12 @@
 <h3 class="title-rev">Games List</h3>
-
+<div class="search">
 <form action="/games/game-search" method="POST">
-    <label>Search a game
+    <label class="input-search">Search a game
         <input type="text" name="search">
     </label>
-    <button>Find it</button>
+    <button class="find-btn">Find it</button>
 </form>
-
+</div>
 <div class="page-btn">
 {{#if firstPage}}
 <form action="/games/game-list/previous">
