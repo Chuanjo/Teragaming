@@ -47,11 +47,19 @@ router.get("/game-list/:page", (req, res, next) => {
 router.get("/game-details/:id", (req, res, next)=>{
   const{id} = req.params //se pone antes del axios para que pueda inicializarse la ID.
   // console.log("hola",id)
+  let gameData;
   axios.get(`https://api.rawg.io/api/games/${id}?key=${process.env.GAMES_API_KEY}`)
-  .then((response)=>{
+  .then((gameDataParam)=>{
+    gameData = gameDataParam.data
     // console.log("adios",id,response.data.id)
-    res.render("games/game-details", {data:response.data})
+    // res.render("games/game-details", {data:gameDataParam.data})
+    return GameModel.find({apiId:id}).populate("createBy")
+
   })
+  .then((allGames)=>{{
+    console.log("hasta luego", allGames)
+    res.render("games/game-details", {allGames, gameData})
+  }})
   .catch((err)=>{
     next(err)
   })
