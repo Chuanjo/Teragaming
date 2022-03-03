@@ -113,6 +113,17 @@ body {
   color: black;
 }
 
+/* Commment box */
+
+.container-comments{
+  position:relative ;
+}
+
+
+
+
+
+
 /*  */
 .comment-box{
   resize:none; 
@@ -700,18 +711,26 @@ body {
 }
 
 
-/* Opinions Style */
+/* Your reviews Style */
 .container-reviews{
   display: inline-flex;
   flex-direction: column;
   flex-grow: 1;
-  width: 430px;
+  width: 470px;
   height: auto;
-  padding-left: 20px;
+  padding-top: 10px;
+  padding-left: 3px;
   margin: 60px 60px;
   background-color: #dd9103a2;
 }
-
+.container-reviews h5{
+  font-weight: 900;
+}
+.container-reviews p{
+  font-weight: 500;
+  font-size: large;
+  padding-left: 20px;
+}
 
 /* Review Content */
 .review-box {
@@ -800,12 +819,12 @@ body {
 
 /*--Button Styles--*/
 .btn-slice {
-padding: 1.2rem 2.0rem;
+padding: 1.2rem 1.6rem;
 border: #dd9103;
 background-color: transparent;
 border-radius: 0rem;
-color: #dd9103;
-font-size: 10;
+color: white;
+font-size: 10px;
 font-weight: 900;
 letter-spacing: 0.7rem;
   position: relative;
