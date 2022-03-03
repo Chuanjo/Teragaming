@@ -331,6 +331,10 @@ body {
 
 /* Page Search Styles */
 
+.search {
+  margin-left: 50px;
+}
+
 .input-search {
   color: #dd9103;
   background-color: transparent;
