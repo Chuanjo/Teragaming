@@ -1,4 +1,12 @@
 <h3 class="title-rev">Games List</h3>
+
+<form action="/games/game-search" method="POST">
+    <label>Search a game
+        <input type="text" name="search">
+    </label>
+    <button>Find it</button>
+</form>
+
 <div class="page-btn">
 {{#if firstPage}}
 <form action="/games/game-list/previous">
@@ -21,7 +29,6 @@
      <div class="anco-game">
          <a href="/games/game-details/{{this.id}}"><p>{{this.name}}</p></a>
      </div>
-     
     </div>
 
 {{/each}}

@@ -95,5 +95,14 @@ router.post("/create/:id/:name",isLoggedIn, (req, res, next) =>{
       next(err)
     })
   })
+
+  router.get("/game-search",(req,res,next)=>{
+    res.render("games/game-search")
+  })
+
+  router.post("/game-search", (req, res, next) =>{
+    res.redirect("games/game-search")
+  })
+
   
 module.exports = router;
