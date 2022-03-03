@@ -965,3 +965,9 @@ width: 130%;
 .error-m{
   color: crimson;
 }
+
+#carouselExampleCaptions{
+  max-width: 900px;
+  max-height: 506px;
+  left: 25%;
+}
