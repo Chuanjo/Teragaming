@@ -329,6 +329,40 @@ body {
   }
 }
 
+/* Page Search Styles */
+
+.input-search {
+  color: #dd9103;
+  background-color: transparent;
+  border: none;
+}
+
+.find-btn {
+  color: #dd9103;
+  background-color: transparent;
+  border: none;
+}
+
+.search button:hover {
+  background: #dd9103;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #dd9103,
+              0 0 25px #dd9103,
+              0 0 50px #dd9103,
+              0 0 100px #dd9103;
+}
+
+.input-search input {
+  color: white;
+  background-color: transparent;
+  border-bottom:  1px solid #dd9103;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+/*   */
+
 .login-btn{
   color: transparent;
   background-color: transparent;
