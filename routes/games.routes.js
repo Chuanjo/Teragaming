@@ -46,15 +46,11 @@ router.get("/game-list/:page", (req, res, next) => {
 //router show the details of the game by Id.
 router.get("/game-details/:id", (req, res, next)=>{
   const{id} = req.params //se pone antes del axios para que pueda inicializarse la ID.
-  // console.log("hola",id)
   let gameData;
   axios.get(`https://api.rawg.io/api/games/${id}?key=${process.env.GAMES_API_KEY}`)
   .then((gameDataParam)=>{
     gameData = gameDataParam.data
-    // console.log("adios",id,response.data.id)
-    // res.render("games/game-details", {data:gameDataParam.data})
     return GameModel.find({apiId:id}).populate("createBy")
-
   })
   .then((allGames)=>{{
     console.log("hasta luego", allGames)
@@ -68,13 +64,9 @@ router.get("/game-details/:id", (req, res, next)=>{
 //Edit the information of the game.
 router.get("/edit/:id/:name", (req, res, next)=>{
   const{id, name} = req.params
-  
-GameModel.findOne({apiId: id})
-.then((response)=>{
-  // console.log("Holaaaa")
-  if (response && response.createBy == req.session.user._id){
-    // console.log("Dentrooo")
-    res.render("index", {
+  GameModel.findOne({apiId: id})
+  .then((response)=>{
+  if (response && response.createBy == req.session.user._id){    res.render("index", {
       errorMessage: "Game already added"
     })
   } else {
