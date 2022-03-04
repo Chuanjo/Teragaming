@@ -2,7 +2,7 @@
 
 ## Description
 
-.
+A good freak’s database. The good thing about video games was that they isolated you from the world.
  
 ## User Stories
 
