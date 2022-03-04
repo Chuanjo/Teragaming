@@ -3,25 +3,16 @@
 <div class="container">
     <div class="container-comments"> 
         <img src="{{gameData.background_image}}" alt="portada" width="800px" height="450px">
-    <h3>Coments</h3>
+        <h3>Coments</h3>
         {{#each allGames}}
-        <h4>{{createBy.username}}</h4>
-        <p>{{comment}}</p>
+            <h4>{{createBy.username}}</h4>
+            <p>{{comment}}</p>
         {{/each}}
     </div>
     <div class="data-game">
         <h4>Score: {{gameData.rating}}</h4>
-        <p></p>
-
         <h4>description: </h4>
         <p>{{gameData.description_raw}}</p>
         <h4>Release: {{gameData.released}}</h4>
-
-            <button><a href="/games/edit/{{gameData.id}}/{{gameData.name}}">Add to favourite</a></button>
-
-
-</div>
-
-
-    
-
+        <button><a href="/games/edit/{{gameData.id}}/{{gameData.name}}">Add to favourite</a></button>
+    </div>

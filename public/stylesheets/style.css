@@ -5,39 +5,37 @@ body {
   background-image: url(/images/d2SwPh.jpg);
 }
 /* Title style */
-.title-rev{
+.title-rev {
   display: flex;
   justify-content: center;
   font-size: 50px;
   background: -webkit-linear-gradient(#dd9103, #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
 
 /* Logo style */
-.logo-name{
+.logo-name {
   display: flex;
   justify-content: center;
   align-items: center;
   image-resolution: 2000dpi;
-  
 }
 
 /* Dinamic Menu */
-.menu{
+.menu {
   position: relative;
   padding-left: 40px;
 }
-.menu ul{
+.menu ul {
   list-style: none;
   margin: 0;
-} 
-.menu ul li{
+}
+.menu ul li {
   padding: 15px;
   position: relative;
 }
-.menu ul ul{
+.menu ul ul {
   transition: all 1s;
 
   opacity: 0;
@@ -45,17 +43,16 @@ body {
   visibility: hidden;
   left: 1%;
 }
-.menu ul li:hover > ul{
+.menu ul li:hover > ul {
   opacity: 1;
   visibility: visible;
 }
-.menu ul li a{
+.menu ul li a {
   text-decoration: none;
   color: #dd9103;
 }
 
-
-.boton-menu{
+.boton-menu {
   font-size: 30px;
   margin: 0;
   padding: 0;
@@ -64,30 +61,30 @@ body {
   position: fixed;
 }
 
-.despe-menu{
+.despe-menu {
   color: #dd9103;
   font-size: 20px;
 }
-.despe-menu a{
+.despe-menu a {
   color: #dd9103;
 }
 
 /* Nav menu */
-.menu2{
-  text-align:right;
+.menu2 {
+  text-align: right;
   margin: 10px 20px;
   font-size: 30px;
 }
-.menu2 a{
+.menu2 a {
   text-decoration: none;
   color: #dd9103;
 }
-.menu2-a{
+.menu2-a {
   padding-left: 15px;
 }
 
 /* Game List */
-.oneGame{
+.oneGame {
   display: inline-flex;
   flex-direction: column;
   justify-content: space-around;
@@ -95,35 +92,29 @@ body {
   text-align: center;
   flex-grow: 1;
   width: auto;
-  height: auto;   
+  height: auto;
   margin: 50px 45px;
   padding: 0px 200px 10px 200px;
   max-width: 200px;
-  border: 2px solid #000000; 
-  background-color: #dd9103; 
+  border: 2px solid #000000;
+  background-color: #dd9103;
 }
-.anco-game{
+.anco-game {
   display: flex;
   width: 230px;
   justify-content: center;
 }
 
-.anco-game a{
+.anco-game a {
   text-decoration: none;
   color: black;
 }
 
 /* Commment box */
 
-
-
-
-
-
-
 /*  */
 
-.container-comments{
+.container-comments {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -131,40 +122,37 @@ body {
   align-items: normal;
   align-content: normal;
 
-  
-  
   border-radius: 10px;
 
   background-color: #dd910362;
 }
-.container-comments h3{
+.container-comments h3 {
   margin-left: 10px;
 }
 
-
-.container-comments h4{
+.container-comments h4 {
   margin-left: 10px;
 }
-.container-comments p{
+.container-comments p {
   margin-left: 10px;
 }
-.comment-box{
-  resize:none; 
+.comment-box {
+  resize: none;
 }
 
-.comment-char{
-  font-size:small;
+.comment-char {
+  font-size: small;
 }
 
-.btn-save{
-  border-radius: 61px 64px 63px 71px / 67px 68px 24px 24px; 
+.btn-save {
+  border-radius: 61px 64px 63px 71px / 67px 68px 24px 24px;
   border: 10px double #000000;
 }
 
-.container{
-    display:flex;
+.container {
+  display: flex;
 }
-.data-game{
+.data-game {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -174,28 +162,26 @@ body {
   border-radius: 10px;
   border: 5px double #000000;
   background-color: #dd910362;
-
 }
-.data-game button{
+.data-game button {
   background-color: #dd9103;
   border: 1px solid;
-  margin-left:5px ;
-
+  margin-left: 5px;
 }
 
-.data-game button:hover{
-  background-color: #dd9103
+.data-game button:hover {
+  background-color: #dd9103;
 }
 
-.data-game a{
+.data-game a {
   text-decoration: none;
-  color: #000000;  
+  color: #000000;
 }
 
-.game-title{
+.game-title {
   text-align: center;
   font-size: 40px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 /* Form Login */
@@ -206,9 +192,9 @@ body {
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 }
 
@@ -238,19 +224,17 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
   margin-top: 40px;
-  letter-spacing: 4px
+  letter-spacing: 4px;
 }
 
 .login-box button:hover {
   background: #dd9103;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #dd9103,
-              0 0 25px #dd9103,
-              0 0 50px #dd9103,
-              0 0 100px #dd9103;
+  box-shadow: 0 0 5px #dd9103, 0 0 25px #dd9103, 0 0 50px #dd9103,
+    0 0 100px #dd9103;
 }
 
 .login-box button span {
@@ -271,7 +255,8 @@ body {
   0% {
     left: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     left: 100%;
   }
 }
@@ -283,14 +268,15 @@ body {
   height: 100%;
   background: linear-gradient(180deg, transparent, #dd9103);
   animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
+  animation-delay: 0.25s;
 }
 
 @keyframes btn-anim2 {
   0% {
     top: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     top: 100%;
   }
 }
@@ -302,14 +288,15 @@ body {
   height: 2px;
   background: linear-gradient(270deg, transparent, #dd9103);
   animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
+  animation-delay: 0.5s;
 }
 
 @keyframes btn-anim3 {
   0% {
     right: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     right: 100%;
   }
 }
@@ -321,14 +308,15 @@ body {
   height: 100%;
   background: linear-gradient(360deg, transparent, #dd9103);
   animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
+  animation-delay: 0.75s;
 }
 
 @keyframes btn-anim4 {
   0% {
     bottom: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     bottom: 100%;
   }
 }
@@ -355,23 +343,21 @@ body {
   background: #dd9103;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #dd9103,
-              0 0 25px #dd9103,
-              0 0 50px #dd9103,
-              0 0 100px #dd9103;
+  box-shadow: 0 0 5px #dd9103, 0 0 25px #dd9103, 0 0 50px #dd9103,
+    0 0 100px #dd9103;
 }
 
 .input-search input {
   color: white;
   background-color: transparent;
-  border-bottom:  1px solid #dd9103;
+  border-bottom: 1px solid #dd9103;
   border-top: none;
   border-left: none;
   border-right: none;
 }
 /*   */
 
-.login-btn{
+.login-btn {
   color: transparent;
   background-color: transparent;
   border: none;
@@ -394,7 +380,7 @@ body {
   background: transparent;
 }
 
-.login-box form button{
+.login-box form button {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -403,19 +389,17 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
   margin-top: 40px;
-  letter-spacing: 4px
+  letter-spacing: 4px;
 }
 
 .login-box button:hover {
   background: #dd9103;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #dd9103,
-              0 0 25px #dd9103,
-              0 0 50px #dd9103,
-              0 0 100px #dd9103;
+  box-shadow: 0 0 5px #dd9103, 0 0 25px #dd9103, 0 0 50px #dd9103,
+    0 0 100px #dd9103;
 }
 
 .login-box button span {
@@ -436,7 +420,8 @@ body {
   0% {
     left: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     left: 100%;
   }
 }
@@ -448,14 +433,15 @@ body {
   height: 100%;
   background: linear-gradient(180deg, transparent, #dd9103);
   animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
+  animation-delay: 0.25s;
 }
 
 @keyframes btn-anim2 {
   0% {
     top: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     top: 100%;
   }
 }
@@ -467,14 +453,15 @@ body {
   height: 2px;
   background: linear-gradient(270deg, transparent, #dd9103);
   animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
+  animation-delay: 0.5s;
 }
 
 @keyframes btn-anim3 {
   0% {
     right: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     right: 100%;
   }
 }
@@ -486,19 +473,20 @@ body {
   height: 100%;
   background: linear-gradient(360deg, transparent, #dd9103);
   animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
+  animation-delay: 0.75s;
 }
 
 @keyframes btn-anim4 {
   0% {
     bottom: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     bottom: 100%;
   }
 }
 
-.login-btn{
+.login-btn {
   color: transparent;
   background-color: transparent;
   border: none;
@@ -512,9 +500,9 @@ body {
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 }
 
@@ -544,19 +532,17 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
   margin-top: 40px;
-  letter-spacing: 4px
+  letter-spacing: 4px;
 }
 
 .signup-box button:hover {
   background: #dd9103;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #dd9103,
-              0 0 25px #dd9103,
-              0 0 50px #dd9103,
-              0 0 100px #dd9103;
+  box-shadow: 0 0 5px #dd9103, 0 0 25px #dd9103, 0 0 50px #dd9103,
+    0 0 100px #dd9103;
 }
 
 .signup-box button span {
@@ -577,7 +563,8 @@ body {
   0% {
     left: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     left: 100%;
   }
 }
@@ -589,14 +576,15 @@ body {
   height: 100%;
   background: linear-gradient(180deg, transparent, #dd9103);
   animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
+  animation-delay: 0.25s;
 }
 
 @keyframes btn-anim2 {
   0% {
     top: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     top: 100%;
   }
 }
@@ -608,14 +596,15 @@ body {
   height: 2px;
   background: linear-gradient(270deg, transparent, #dd9103);
   animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
+  animation-delay: 0.5s;
 }
 
 @keyframes btn-anim3 {
   0% {
     right: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     right: 100%;
   }
 }
@@ -627,19 +616,20 @@ body {
   height: 100%;
   background: linear-gradient(360deg, transparent, #dd9103);
   animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
+  animation-delay: 0.75s;
 }
 
 @keyframes btn-anim4 {
   0% {
     bottom: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     bottom: 100%;
   }
 }
 
-.signup-btn{
+.signup-btn {
   color: transparent;
   background-color: transparent;
   border: none;
@@ -671,19 +661,17 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
   margin-top: 40px;
-  letter-spacing: 4px
+  letter-spacing: 4px;
 }
 
 .signup-box button:hover {
   background: #dd9103;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #dd9103,
-              0 0 25px #dd9103,
-              0 0 50px #dd9103,
-              0 0 100px #dd9103;
+  box-shadow: 0 0 5px #dd9103, 0 0 25px #dd9103, 0 0 50px #dd9103,
+    0 0 100px #dd9103;
 }
 
 .signup-box button span {
@@ -704,7 +692,8 @@ body {
   0% {
     left: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     left: 100%;
   }
 }
@@ -716,14 +705,15 @@ body {
   height: 100%;
   background: linear-gradient(180deg, transparent, #dd9103);
   animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
+  animation-delay: 0.25s;
 }
 
 @keyframes btn-anim2 {
   0% {
     top: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     top: 100%;
   }
 }
@@ -735,14 +725,15 @@ body {
   height: 2px;
   background: linear-gradient(270deg, transparent, #dd9103);
   animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
+  animation-delay: 0.5s;
 }
 
 @keyframes btn-anim3 {
   0% {
     right: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     right: 100%;
   }
 }
@@ -754,27 +745,27 @@ body {
   height: 100%;
   background: linear-gradient(360deg, transparent, #dd9103);
   animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
+  animation-delay: 0.75s;
 }
 
 @keyframes btn-anim4 {
   0% {
     bottom: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     bottom: 100%;
   }
 }
 
-.signup-btn{
+.signup-btn {
   color: transparent;
   background-color: transparent;
   border: none;
 }
 
-
 /* Your reviews Style */
-.container-reviews{
+.container-reviews {
   display: inline-flex;
   flex-direction: column;
   flex-grow: 1;
@@ -784,12 +775,11 @@ body {
   padding-left: 3px;
   margin: 60px 60px;
   background-color: #dd9103a2;
-
 }
-.container-reviews h5{
+.container-reviews h5 {
   font-weight: 900;
 }
-.container-reviews p{
+.container-reviews p {
   font-weight: 500;
   font-size: large;
   padding-left: 20px;
@@ -805,12 +795,12 @@ body {
   padding: 40px;
   text-align: flex-end;
   transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 }
-.review-btn{
+.review-btn {
   color: white;
   background-color: transparent;
   border: none;
@@ -842,29 +832,27 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
   margin-top: 40px;
-  letter-spacing: 4px
+  letter-spacing: 4px;
 }
 
 .review-box button:hover {
   background: #dd9103;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #dd9103,
-              0 0 25px #dd9103,
-              0 0 50px #dd9103,
-              0 0 100px #dd9103;
+  box-shadow: 0 0 5px #dd9103, 0 0 25px #dd9103, 0 0 50px #dd9103,
+    0 0 100px #dd9103;
 }
 /* Page Buttons */
-.page-btn{
+.page-btn {
   display: flex;
   text-align: end;
   justify-content: end;
   margin-right: 50px;
 }
 
-.page-btn button{
+.page-btn button {
   color: #dd9103;
   background-color: transparent;
   border: none;
@@ -874,88 +862,104 @@ body {
   background: #dd9103;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #dd9103,
-              0 0 25px #dd9103,
-              0 0 50px #dd9103,
-              0 0 100px #dd9103;
+  box-shadow: 0 0 5px #dd9103, 0 0 25px #dd9103, 0 0 50px #dd9103,
+    0 0 100px #dd9103;
 }
 
-
 /* Delete button */
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One'); 
-
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One");
 
 /*--Button Styles--*/
 .btn-slice {
-padding: 1.2rem 1.6rem;
-border: #dd9103;
-background-color: transparent;
-border-radius: 0rem;
-color: white;
-font-size: 10px;
-font-weight: 900;
-letter-spacing: 0.7rem;
+  padding: 1.2rem 1.6rem;
+  border: #dd9103;
+  background-color: transparent;
+  border-radius: 0rem;
+  color: white;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.7rem;
   position: relative;
-  
-  -webkit-transition: all 1000ms cubic-bezier(0.890, 0, 0.140, 1); /* older webkit */
-  -webkit-transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225); 
-  -moz-transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225); 
-  -o-transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225); 
-  transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225); /* custom */
 
-  -webkit-transition-timing-function: cubic-bezier(0.890, 0, 0.140, 1); /* older webkit */
-  -webkit-transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225); 
-  -moz-transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225); 
-  -o-transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225); 
-  transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225); /* custom */
+  -webkit-transition: all 1000ms cubic-bezier(0.89, 0, 0.14, 1); /* older webkit */
+  -webkit-transition: all 1000ms cubic-bezier(0.89, -0.17, 0.14, 1.225);
+  -moz-transition: all 1000ms cubic-bezier(0.89, -0.17, 0.14, 1.225);
+  -o-transition: all 1000ms cubic-bezier(0.89, -0.17, 0.14, 1.225);
+  transition: all 1000ms cubic-bezier(0.89, -0.17, 0.14, 1.225); /* custom */
+
+  -webkit-transition-timing-function: cubic-bezier(
+    0.89,
+    0,
+    0.14,
+    1
+  ); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.89, -0.17, 0.14, 1.225);
+  -moz-transition-timing-function: cubic-bezier(0.89, -0.17, 0.14, 1.225);
+  -o-transition-timing-function: cubic-bezier(0.89, -0.17, 0.14, 1.225);
+  transition-timing-function: cubic-bezier(
+    0.89,
+    -0.17,
+    0.14,
+    1.225
+  ); /* custom */
 }
 
-.btn-slice .top  {
-position: relative;
-height: 6px;
-overflow: hidden;
+.btn-slice .top {
+  position: relative;
+  height: 6px;
+  overflow: hidden;
   top: 0;
-  -webkit-transition: all 300ms cubic-bezier(1.000, 0, 0.025, 1); /* older webkit */
-  -webkit-transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040); 
-  -moz-transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040); 
-  -o-transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040); 
-  transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040); /* custom */
+  -webkit-transition: all 300ms cubic-bezier(1, 0, 0.025, 1); /* older webkit */
+  -webkit-transition: all 300ms cubic-bezier(1, -0.055, 0.025, 1.04);
+  -moz-transition: all 300ms cubic-bezier(1, -0.055, 0.025, 1.04);
+  -o-transition: all 300ms cubic-bezier(1, -0.055, 0.025, 1.04);
+  transition: all 300ms cubic-bezier(1, -0.055, 0.025, 1.04); /* custom */
 
-  -webkit-transition-timing-function: cubic-bezier(1.000, 0, 0.025, 1); /* older webkit */
-  -webkit-transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040); 
-  -moz-transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040); 
-  -o-transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040); 
-  transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040); /* custom */
-  
-  -webkit-transition-delay:0.35s;     
-  -moz-transition-delay:0.35s; 
-  -ms-transition-delay:0.35s;     
-  -o-transition-delay:0.35s;     
-  transition-delay:0.35s;
+  -webkit-transition-timing-function: cubic-bezier(
+    1,
+    0,
+    0.025,
+    1
+  ); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(1, -0.055, 0.025, 1.04);
+  -moz-transition-timing-function: cubic-bezier(1, -0.055, 0.025, 1.04);
+  -o-transition-timing-function: cubic-bezier(1, -0.055, 0.025, 1.04);
+  transition-timing-function: cubic-bezier(1, -0.055, 0.025, 1.04); /* custom */
+
+  -webkit-transition-delay: 0.35s;
+  -moz-transition-delay: 0.35s;
+  -ms-transition-delay: 0.35s;
+  -o-transition-delay: 0.35s;
+  transition-delay: 0.35s;
 }
 
-.btn-slice .bottom  {
-position: relative;
-height: 6px;
-overflow: hidden;
+.btn-slice .bottom {
+  position: relative;
+  height: 6px;
+  overflow: hidden;
   bottom: 0;
-  -webkit-transition: all 300ms cubic-bezier(1.000, 0, 0.025, 1); /* older webkit */
-  -webkit-transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040); 
-  -moz-transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040); 
-  -o-transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040); 
-  transition: all 300ms cubic-bezier(1.000, -0.055, 0.025, 1.040); /* custom */
+  -webkit-transition: all 300ms cubic-bezier(1, 0, 0.025, 1); /* older webkit */
+  -webkit-transition: all 300ms cubic-bezier(1, -0.055, 0.025, 1.04);
+  -moz-transition: all 300ms cubic-bezier(1, -0.055, 0.025, 1.04);
+  -o-transition: all 300ms cubic-bezier(1, -0.055, 0.025, 1.04);
+  transition: all 300ms cubic-bezier(1, -0.055, 0.025, 1.04); /* custom */
 
-  -webkit-transition-timing-function: cubic-bezier(1.000, 0, 0.025, 1); /* older webkit */
-  -webkit-transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040); 
-  -moz-transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040); 
-  -o-transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040); 
-  transition-timing-function: cubic-bezier(1.000, -0.055, 0.025, 1.040); /* custom */
-  
-  -webkit-transition-delay:0.35s;     
-  -moz-transition-delay:0.35s; 
-  -ms-transition-delay:0.35s;     
-  -o-transition-delay:0.35s;     
-  transition-delay:0.35s;
+  -webkit-transition-timing-function: cubic-bezier(
+    1,
+    0,
+    0.025,
+    1
+  ); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(1, -0.055, 0.025, 1.04);
+  -moz-transition-timing-function: cubic-bezier(1, -0.055, 0.025, 1.04);
+  -o-transition-timing-function: cubic-bezier(1, -0.055, 0.025, 1.04);
+  transition-timing-function: cubic-bezier(1, -0.055, 0.025, 1.04); /* custom */
+
+  -webkit-transition-delay: 0.35s;
+  -moz-transition-delay: 0.35s;
+  -ms-transition-delay: 0.35s;
+  -o-transition-delay: 0.35s;
+  transition-delay: 0.35s;
 }
 
 .btn-slice .bottom span {
@@ -965,54 +969,66 @@ overflow: hidden;
 }
 
 .btn-slice:hover .top {
-top: -5px;
-  -webkit-transition-delay:0.35s;     
-  -moz-transition-delay:0.35s; 
-  -ms-transition-delay:0.35s;     
-  -o-transition-delay:0.35s;     
-  transition-delay:0.35s; 
+  top: -5px;
+  -webkit-transition-delay: 0.35s;
+  -moz-transition-delay: 0.35s;
+  -ms-transition-delay: 0.35s;
+  -o-transition-delay: 0.35s;
+  transition-delay: 0.35s;
 }
 
 .btn-slice:hover .bottom {
-bottom: -5px;
-  -webkit-transition-delay:0.35s;     
-  -moz-transition-delay:0.35s; 
-  -ms-transition-delay:0.35s;     
-  -o-transition-delay:0.35s;     
-  transition-delay:0.35s; 
+  bottom: -5px;
+  -webkit-transition-delay: 0.35s;
+  -moz-transition-delay: 0.35s;
+  -ms-transition-delay: 0.35s;
+  -o-transition-delay: 0.35s;
+  transition-delay: 0.35s;
 }
-.btn-slice:hover, .btn-slice:focus, .btn-slice:active {
-margin-left: 10px;
+.btn-slice:hover,
+.btn-slice:focus,
+.btn-slice:active {
+  margin-left: 10px;
 }
-.btn-slice:before{
-height: 1px;
-width: 60px;
-background-color: #ffffff;
-position: absolute;
-margin-top: 6px;
-right: -35px;
-  
-  -webkit-transition: all 1000ms cubic-bezier(0.890, 0, 0.140, 1); /* older webkit */
-  -webkit-transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225); 
-  -moz-transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225); 
-  -o-transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225); 
-  transition: all 1000ms cubic-bezier(0.890, -0.170, 0.140, 1.225); /* custom */
+.btn-slice:before {
+  height: 1px;
+  width: 60px;
+  background-color: #ffffff;
+  position: absolute;
+  margin-top: 6px;
+  right: -35px;
 
-  -webkit-transition-timing-function: cubic-bezier(0.890, 0, 0.140, 1); /* older webkit */
-  -webkit-transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225); 
-  -moz-transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225); 
-  -o-transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225); 
-  transition-timing-function: cubic-bezier(0.890, -0.170, 0.140, 1.225); /* custom */
+  -webkit-transition: all 1000ms cubic-bezier(0.89, 0, 0.14, 1); /* older webkit */
+  -webkit-transition: all 1000ms cubic-bezier(0.89, -0.17, 0.14, 1.225);
+  -moz-transition: all 1000ms cubic-bezier(0.89, -0.17, 0.14, 1.225);
+  -o-transition: all 1000ms cubic-bezier(0.89, -0.17, 0.14, 1.225);
+  transition: all 1000ms cubic-bezier(0.89, -0.17, 0.14, 1.225); /* custom */
+
+  -webkit-transition-timing-function: cubic-bezier(
+    0.89,
+    0,
+    0.14,
+    1
+  ); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.89, -0.17, 0.14, 1.225);
+  -moz-transition-timing-function: cubic-bezier(0.89, -0.17, 0.14, 1.225);
+  -o-transition-timing-function: cubic-bezier(0.89, -0.17, 0.14, 1.225);
+  transition-timing-function: cubic-bezier(
+    0.89,
+    -0.17,
+    0.14,
+    1.225
+  ); /* custom */
 }
-.btn-slice:hover:before{
-width: 130%;
+.btn-slice:hover:before {
+  width: 130%;
 }
 /* Error message */
-.error-m{
+.error-m {
   color: crimson;
 }
 
-#carouselExampleCaptions{
+#carouselExampleCaptions {
   max-width: 900px;
   max-height: 506px;
   left: 25%;

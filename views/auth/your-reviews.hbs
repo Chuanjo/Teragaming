@@ -1,18 +1,18 @@
 <h3 class="title-rev">Your reviews</h3>
 
 {{#each yourGame}}
-<div class="container-reviews">
-<h5><li>Game:</li></h5><h5>{{name}}</h5>
-<h5><li>Score:</li></h5><p>{{score}}</p>
-<h5><li>Status:</li></h5><p>{{status}}</p>
-  <h5><li>Comment:</li></h5><p>{{comment}}</p>
-  <div>
-<form action="/auth/{{id}}/delete" method="POST">
-      <button class="btn-slice" href="#">
-  <div class="top"><span>DELETE</span></div>
-<div class="bottom"><span>DELETE</span></div>
-</button>
-    </form>
+  <div class="container-reviews">
+    <h5><li>Game:</li></h5><h5>{{name}}</h5>
+    <h5><li>Score:</li></h5><p>{{score}}</p>
+    <h5><li>Status:</li></h5><p>{{status}}</p>
+    <h5><li>Comment:</li></h5><p>{{comment}}</p>
+    <div>
+      <form action="/auth/{{id}}/delete" method="POST">
+        <button class="btn-slice" href="#">
+          <div class="top"><span>DELETE</span></div>
+          <div class="bottom"><span>DELETE</span></div>
+        </button>
+      </form>
     </div>
   </div>
 {{/each}}

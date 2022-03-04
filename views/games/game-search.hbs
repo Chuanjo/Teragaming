@@ -1,10 +1,9 @@
 <h2 class="title-rev">Search results</h2>
-
 {{#each search}}
-    <div class="oneGame">
-     <img src="{{background_image}}" alt="img" width="400px" height="225px">
-     <div class="anco-game">
-         <a href="/games/game-details/{{this.id}}"><p>{{this.name}}</p></a>
-     </div>
+  <div class="oneGame">
+    <img src="{{background_image}}" alt="img" width="400px" height="225px" />
+    <div class="anco-game">
+      <a href="/games/game-details/{{this.id}}"><p>{{this.name}}</p></a>
     </div>
+  </div>
 {{/each}}

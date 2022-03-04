@@ -1,26 +1,24 @@
 <div class="login-box">
-<h3 class="title-rev">Log in</h3>
-<form action="/auth/login" method="POST">
-<div class="user-box">
-   <label> Username
-      <input type="text" name="username">
-   </label>
-   <label> Password
-      <input type="password" name="password">
-   </div>
+   <h3 class="title-rev">Log in</h3>
+   <form action="/auth/login" method="POST">
+      <div class="user-box">
+         <label> Username
+            <input type="text" name="username">
+         </label>
+         <label> Password
+         <input type="password" name="password">
+      </div>
       <button class="login-btn">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Submit
-    </button>
-
-
-<div class="error-m">
-{{#if errorMessage}}
-   {{errorMessage}}
-{{/if}}
-</div>
-</form>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         Submit
+      </button>
+      <div class="error-m">
+         {{#if errorMessage}}
+            {{errorMessage}}
+         {{/if}}
+      </div>
+   </form>
 </div>

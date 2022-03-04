@@ -1,55 +1,46 @@
 <h3 class="title-rev">Games List</h3>
 <div class="search">
-<form action="/games/game-search" method="POST">
-    <label class="input-search">Search a game
-        <input type="text" name="search">
-    </label>
-    <button class="find-btn">Find it</button>
-</form>
+    <form action="/games/game-search" method="POST">
+        <label class="input-search">Search a game
+            <input type="text" name="search">
+        </label>
+        <button class="find-btn">Find it</button>
+    </form>
 </div>
 <div class="page-btn">
-{{#if firstPage}}
-<form action="/games/game-list/previous">
-    <button disabled="true">Previous Page</button>
-</form>
-{{else}}
-<form action="/games/game-list/previous">
-    <button>Previous page</button>
-</form>
-{{/if}}
-
-<form action="/games/game-list/next">
-    <button>Next page</button>
-</form>
+    {{#if firstPage}}
+        <form action="/games/game-list/previous">
+            <button disabled="true">Previous Page</button>
+        </form>
+    {{else}}
+        <form action="/games/game-list/previous">
+            <button>Previous page</button>
+        </form>
+    {{/if}}
+    <form action="/games/game-list/next">
+        <button>Next page</button>
+    </form>
 </div>
 <div class="container-games">
-{{#each data}}
-    <div class="oneGame">
-     <img src="{{background_image}}" alt="img" width="400px" height="225px">
-     <div class="anco-game">
-         <a href="/games/game-details/{{this.id}}"><p>{{this.name}}</p></a>
-     </div>
-    </div>
-
-{{/each}}
-
-{{!-- {{#if errorMessage}}
-    <p style="color: red;">{{errorMessage}}!!!</p>
-{{/if}} --}}
+    {{#each data}}
+        <div class="oneGame">
+            <img src="{{background_image}}" alt="img" width="400px" height="225px">
+            <div class="anco-game">
+                <a href="/games/game-details/{{this.id}}"><p>{{this.name}}</p></a>
+            </div>
+        </div>
+    {{/each}}
 <div class="page-btn">
-{{#if firstPage}}
-<form action="/games/game-list/previous">
-    <button disabled="true">Previous Page</button>
-</form>
-{{else}}
-<form action="/games/game-list/previous">
-    <button>Previous page</button>
-</form>
-{{/if}}
-
-<form action="/games/game-list/next">
-    <button>Next page</button>
-</form>
-
-
+    {{#if firstPage}}
+        <form action="/games/game-list/previous">
+            <button disabled="true">Previous Page</button>
+        </form>
+    {{else}}
+        <form action="/games/game-list/previous">
+            <button>Previous page</button>
+        </form>
+    {{/if}}
+    <form action="/games/game-list/next">
+        <button>Next page</button>
+    </form>
 </div>

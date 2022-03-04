@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const gameModel = require("../models/game.model")
+const gameModel = require("../models/game.model");
 
 // ℹ️ Handles password encryption
 const bcrypt = require("bcrypt");
@@ -71,7 +71,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
       .then((user) => {
         // Bind the user to the session object
         req.session.user = user;
-        req.app.locals.isLoggedIn = true
+        req.app.locals.isLoggedIn = true;
         res.redirect("/auth/profile");
       })
       .catch((error) => {
@@ -132,8 +132,8 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           });
         }
         req.session.user = user;
-        req.app.locals.isLoggedIn = true // esta es una variable loca accesible en handlebars
-        // req.session.user = user._id; 
+        req.app.locals.isLoggedIn = true; // esta es una variable loca accesible en handlebars
+        // req.session.user = user._id;
         return res.redirect("/auth/profile");
       });
     })
@@ -153,76 +153,64 @@ router.get("/logout", isLoggedIn, (req, res) => {
         .status(500)
         .render("auth/logout", { errorMessage: err.message });
     }
-    req.app.locals.isLoggedIn = false
+    req.app.locals.isLoggedIn = false;
     res.redirect("/");
   });
 });
 
-router.get("/profile",isLoggedIn, (req, res, next) => {
+router.get("/profile", isLoggedIn, (req, res, next) => {
   User.findById(req.session.user._id)
-  // console.log("hola",req.session.user._id)
-  .then((user)=>{
-    res.render("auth/profile.hbs", {user})
-  })
-  .catch((err)=>{
-    next(err)
-  })
+    .then((user) => {
+      res.render("auth/profile.hbs", { user });
+    })
+    .catch((err) => {
+      next(err);
+    });
 });
-router.get("/your-reviews",isLoggedIn, (req, res, next) => {
-  gameModel.find({createBy:req.session.user._id})
-  .then((yourGame)=>{
-    console.log(yourGame)
-    res.render("auth/your-reviews.hbs", {yourGame})
-  })
-  .catch((err)=>{
-    next(err)
-  })
+
+router.get("/your-reviews", isLoggedIn, (req, res, next) => {
+  gameModel
+    .find({ createBy: req.session.user._id })
+    .then((yourGame) => {
+      res.render("auth/your-reviews.hbs", { yourGame });
+    })
+    .catch((err) => {
+      next(err);
+    });
 });
+
 router.get("/opinions", isLoggedIn, (req, res, next) => {
-  const{username} = req.session.user
-  // console.log("hola",username)
-  gameModel.find()
-  .populate("createBy")
-  .then((showAll) => {
-    // console.log("hola",showAll)
-    // render games in review
-    res.render(`auth/opinions`, {showAll})
-  })
-  .catch((err) => {
-    next(err)
-  })
+  const { username } = req.session.user;
+  gameModel
+    .find()
+    .populate("createBy")
+    .then((showAll) => {
+      res.render(`auth/opinions`, { showAll });
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
 
-})
 router.get("/opinions/:id/", isLoggedIn, (req, res, next) => {
-  // console.log("hola",username)
-  gameModel.find()
-  .populate("createBy")
-  .then((showAll) => {
-    // console.log("hola",showAll)
-    // render games in review
-    res.render(`auth/game-opinion`, {showAll})
-  })
-  .catch((err) => {
-    next(err)
-  })
-
-})
-
+  gameModel
+    .find()
+    .populate("createBy")
+    .then((showAll) => {
+      res.render(`auth/game-opinion`, { showAll });
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
 
 router.post("/:id/delete", async (req, res, next) => {
-
   try {
-    const { id } = req.params
-  
-    // Remove from DB
-    await gameModel.findByIdAndDelete(id)
-  
-    //Send back to profile after delete
-    res.redirect("/auth/your-reviews")
+    const { id } = req.params;
+    await gameModel.findByIdAndDelete(id);
+    res.redirect("/auth/your-reviews");
+  } catch (err) {
+    next(err);
   }
-  catch(err) {
-    next(err)
-  }
-
-})
+});
 module.exports = router;
